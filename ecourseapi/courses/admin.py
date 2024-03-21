@@ -1,5 +1,5 @@
 from django.contrib import admin
-from courses.models import Category, Course, Lesson, Tag
+from courses.models import Category, Course, Lesson, Tag, Comment
 from django.utils.html import mark_safe
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
@@ -30,8 +30,14 @@ class CourseAdmin(admin.ModelAdmin):
         }
 
 
+class LessonAdmin(admin.ModelAdmin):
+    list_display = ['id', 'subject', 'created_date', 'updated_date']
+    search_fields = ['subject']
+
+
 admin.site.register(Category)
 admin.site.register(Course, CourseAdmin)
-admin.site.register(Lesson)
+admin.site.register(Lesson, LessonAdmin)
 admin.site.register(Tag)
+admin.site.register(Comment)
 
