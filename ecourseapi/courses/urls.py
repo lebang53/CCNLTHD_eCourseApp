@@ -7,6 +7,7 @@ r.register('categories', views.CategoryViewset, basename='categories')
 r.register('courses', views.CourseViewset, basename='courses')
 r.register('lessons', views.LessonViewset, basename='lessons')
 r.register('users', views.UserViewset, basename='users')
+r.register('comments', views.CommentViewset, basename='comments')
 
 urlpatterns = [
     path('', include(r.urls))
