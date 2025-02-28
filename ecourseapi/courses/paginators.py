@@ -7,3 +7,4 @@ class CoursePaginator(pagination.PageNumberPagination):
 
 class CommentPaginator(pagination.PageNumberPagination):
     page_size = 2
+# hehe
